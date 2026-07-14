@@ -70,6 +70,9 @@ Maven Build
 Unit Tests
       │
       ▼
+Integration Tests
+      │
+      ▼
 Checkstyle Analysis
       │
       ▼
@@ -89,6 +92,5 @@ Amazon Elastic Container Registry (Amazon ECR)
       │
       ▼
 Slack Notification
-
 
 This architecture demonstrates a modern enterprise CI workflow that automates application validation, artifact management, container image creation, secure image publishing, and team notification, ensuring consistency, traceability, and repeatability throughout the software delivery process.
