@@ -94,3 +94,24 @@ Amazon Elastic Container Registry (Amazon ECR)
 Slack Notification
 
 This architecture demonstrates a modern enterprise CI workflow that automates application validation, artifact management, container image creation, secure image publishing, and team notification, ensuring consistency, traceability, and repeatability throughout the software delivery process.
+
+## Technology Stack
+
+| Category | Technology | Purpose |
+|----------|------------|---------|
+| Version Control | Git & GitHub | Source code management and version control |
+| CI Platform | Jenkins (Declarative Pipeline) | Orchestrates the end-to-end Continuous Integration (CI) workflow |
+| Programming Language | Java (JDK 17) | Application development and compilation |
+| Build Automation | Apache Maven 3.9.14 | Build automation and dependency management |
+| Unit Testing | Maven | Executes automated unit tests during the pipeline |
+| Integration Testing | Maven | Executes automated integration tests during the pipeline |
+| Static Code Analysis | Checkstyle | Performs source code style and standards validation |
+| Code Quality Platform | SonarQube | Performs static code analysis and evaluates the Quality Gate |
+| Artifact Repository | Nexus Repository Manager | Stores and manages versioned WAR artifacts |
+| Containerization | Docker | Builds application container images using a multi-stage Dockerfile |
+| Container Registry | Amazon Elastic Container Registry (Amazon ECR) | Stores and versions Docker container images |
+| Cloud Platform | Amazon Web Services (AWS) | Provides the cloud infrastructure hosting the CI environment |
+| Compute Services | Amazon EC2 | Hosts Jenkins, Maven Agent, SonarQube, and Nexus Repository Manager servers |
+| Identity & Access Management | AWS IAM | Secures authentication and authorization for Amazon ECR access |
+| Team Collaboration | Slack | Sends automated pipeline status notifications |
+| Operating Systems | Amazon Linux 2023 & Ubuntu Server 26.04 LTS | Operating systems used across the CI infrastructure |
