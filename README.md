@@ -19,25 +19,25 @@ The implementation extends an enterprise Continuous Integration (CI) pipeline by
 
 > *Project Status:* ✅ Completed Successfully
 
-Table of Contents
+## Table of Contents
 
-- "Project Overview" (#project-overview)
-- "Business Objective" (#business-objective)
-- "Solution Architecture" (#solution-architecture)
-- "Technology Stack" (#technology-stack)
-- "AWS Infrastructure" (#aws-infrastructure)
-- "Docker & Amazon ECR Configuration" (#docker--amazon-ecr-configuration)
-- "Jenkins Pipeline Workflow" (#jenkins-pipeline-workflow)
-- "Jenkinsfile Implementation" (#jenkinsfile-implementation)
-- "Docker Image Build & Amazon ECR Push Process" (#docker-image-build--amazon-ecr-push-process)
-- "Implementation Summary" (#implementation-summary)
-- "Project Screenshots" (#project-screenshots)
-- "Repository Structure" (#repository-structure)
-- "Troubleshooting" (#troubleshooting)
-- "Lessons Learned" (#lessons-learned)
-- "Skills Demonstrated" (#skills-demonstrated)
-- "Future Enhancements" (#future-enhancements)
-- "Author" (#author)
+- [Project Overview](#project-overview)
+- [Business Objective](#business-objective)
+- [Solution Architecture](#solution-architecture)
+- [Technology Stack](#technology-stack)
+- [AWS Infrastructure](#aws-infrastructure)
+- [Docker & Amazon ECR Configuration](#docker--amazon-ecr-configuration)
+- [Jenkins Pipeline Workflow](#jenkins-pipeline-workflow)
+- [Jenkinsfile Implementation](#jenkinsfile-implementation)
+- [Docker Image Build & Amazon ECR Push Process](#docker-image-build--amazon-ecr-push-process)
+- [Implementation Summary](#implementation-summary)
+- [Project Screenshots](#project-screenshots)
+- [Repository Structure](#repository-structure)
+- [Troubleshooting](#troubleshooting)
+- [Lessons Learned](#lessons-learned)
+- [Skills Demonstrated](#skills-demonstrated)
+- [Future Enhancements](#future-enhancements)
+- [Author](#author)
 
 ## Project Overview
 
