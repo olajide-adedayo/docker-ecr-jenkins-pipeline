@@ -374,3 +374,18 @@ Slack notifications were not received during earlier builds| Reviewed the Jenkin
 Changing EC2 public IP addresses after instance restarts| Updated service configurations to use the current public IP addresses, restoring connectivity between Jenkins and dependent services.
 
 Each issue provided practical experience in diagnosing CI pipeline failures, validating integrations, and maintaining a reliable DevOps workflow across multiple tools and AWS services.
+
+Lessons Learned
+
+This project provided hands-on experience in designing, implementing, and troubleshooting a modern CI pipeline that integrates multiple DevOps tools and AWS services. Key lessons learned include:
+
+- Building and maintaining Jenkins Declarative Pipelines using Pipeline as Code.
+- Integrating Maven to automate Java application builds and dependency management.
+- Executing automated unit and integration tests as part of the CI workflow.
+- Performing static code analysis using SonarQube to identify code quality issues early in the development lifecycle.
+- Publishing versioned application artifacts to Nexus Repository Manager for centralized artifact management.
+- Building Docker images using a multi-stage Dockerfile to create efficient container images.
+- Authenticating Jenkins with Amazon Elastic Container Registry (Amazon ECR) and publishing versioned Docker images.
+- Automating build notifications through Slack to improve team visibility and collaboration.
+- Diagnosing and resolving CI pipeline failures by analyzing build logs, service configurations, and integration points.
+- Understanding how multiple DevOps tools work together to deliver a reliable, automated Continuous Integration workflow.
