@@ -360,3 +360,17 @@ Repository Contents
 - screenshots/ – Contains screenshots captured during the project implementation and used throughout the README as supporting technical evidence.
 - .gitignore – Specifies files and directories excluded from Git version control.
 - LICENSE – Defines the licensing terms for this repository.
+
+Troubleshooting
+
+During the implementation of this project, several configuration and integration challenges were encountered and successfully resolved.
+
+Issue| Resolution
+Jenkins pipeline failed during initial executions| Reviewed the pipeline stage logs, corrected configuration issues, and re-executed the pipeline until all stages completed successfully.
+SonarQube Quality Gate reported a failed status| Verified that SonarQube analysis completed successfully. The Quality Gate reflected existing code quality findings in the application rather than a pipeline integration failure.
+Amazon ECR authentication failed| Verified AWS credentials configured in Jenkins and confirmed successful authentication before pushing Docker images to Amazon ECR.
+Docker image push to Amazon ECR| Confirmed the correct Amazon ECR repository configuration and successfully published the Docker image using both the build number and "latest" tags.
+Slack notifications were not received during earlier builds| Reviewed the Jenkins Slack integration, corrected the configuration, and confirmed successful notifications after the final pipeline execution.
+Changing EC2 public IP addresses after instance restarts| Updated service configurations to use the current public IP addresses, restoring connectivity between Jenkins and dependent services.
+
+Each issue provided practical experience in diagnosing CI pipeline failures, validating integrations, and maintaining a reliable DevOps workflow across multiple tools and AWS services.
