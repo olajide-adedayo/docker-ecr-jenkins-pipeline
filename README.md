@@ -28,3 +28,20 @@ The solution automates the complete application packaging workflow using a Jenki
 To support image versioning and deployment consistency, each successful pipeline execution tags the Docker image with both the Jenkins build number and the latest tag before publishing it to Amazon ECR. Upon completion, Slack notifications provide immediate feedback on the pipeline execution status.
 
 Throughout the implementation, several real-world integration challenges—including SonarQube connectivity, webhook configuration, changing EC2 public IP addresses, AWS credential validation, and Amazon ECR authentication—were successfully diagnosed and resolved, resulting in a fully functional end-to-end CI pipeline suitable for modern containerized application delivery.
+
+## Business Objective
+
+Modern software delivery requires applications to be packaged consistently, stored securely, and made readily available for deployment across different environments. Manual container image creation and distribution are time-consuming, error-prone, and difficult to scale within enterprise CI/CD workflows.
+
+The objective of this project was to automate the containerization and image publishing process by extending an existing Jenkins-based Continuous Integration (CI) pipeline with Docker and Amazon Elastic Container Registry (Amazon ECR).
+
+The implemented solution enables Jenkins to automatically:
+
+- Build the Java application from source code.
+- Validate code quality through automated testing and static analysis.
+- Package the application into a Docker image using a multi-stage Dockerfile.
+- Version container images using both the Jenkins build number and the latest tag.
+- Securely publish Docker images to a private Amazon ECR repository.
+- Notify the development team of pipeline execution results through Slack.
+
+By automating these activities, the solution improves build consistency, reduces manual intervention, enhances traceability through image versioning, and prepares container images for future deployment into container orchestration platforms such as Amazon ECS or Kubernetes.
