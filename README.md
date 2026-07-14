@@ -141,3 +141,38 @@ The CI environment was deployed on Amazon Web Services (AWS) using a combination
 | Nexus Repository Manager | t3.small | Amazon Linux 2023 | Artifact repository for versioned WAR packages |
 
 The infrastructure supports an automated enterprise CI workflow in which Jenkins coordinates the build process across dedicated services for testing, code quality analysis, artifact storage, container image creation, and image publication to Amazon ECR.
+
+## Docker & Amazon ECR Configuration
+
+Docker was integrated into the Jenkins Declarative Pipeline to automate application containerization after the successful completion of the build, testing, code quality analysis, and artifact publication stages.
+
+A *multi-stage Docker build* was implemented to package the Java application into a production-ready container image. The Docker build process uses the build context located at:
+
+text
+./Docker-files/app/multistage/
+
+
+This approach enables Jenkins to build the application image using the project's multi-stage Dockerfile while maintaining a clean and repeatable container build process.
+
+### Docker Image Versioning
+
+To improve traceability and image management, the pipeline applies two tags to every successful Docker image:
+
+| Image Tag | Purpose |
+|-----------|---------|
+| ${env.BUILD_NUMBER} | Provides a unique, versioned image corresponding to the Jenkins build number. |
+| latest | Identifies the most recent successful Docker image. |
+
+The Docker image is built once and then published to Amazon Elastic Container Registry (Amazon ECR) with both tags, allowing consumers to reference either a specific build or the latest available image.
+
+### Amazon ECR Integration
+
+The pipeline authenticates with Amazon Elastic Container Registry (Amazon ECR) using AWS credentials configured in Jenkins. After successful authentication, the Docker image is pushed to the private Amazon ECR repository:
+
+text
+vprofileappimg
+
+
+The image publishing process is performed within the Jenkins pipeline using Docker registry authentication, ensuring that only authenticated pipeline executions can publish container images to the private registry.
+
+This automated integration eliminates manual image publishing, maintains consistent image versioning, and prepares container images for future deployment workflows.
