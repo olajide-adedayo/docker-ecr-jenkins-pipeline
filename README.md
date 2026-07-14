@@ -206,3 +206,33 @@ The pipeline implements a structured CI workflow that:
 - Sends Slack notifications to communicate pipeline execution status.
 
 This sequential workflow helps ensure that only successfully validated application builds are packaged into Docker images and published to Amazon ECR.
+
+## Jenkinsfile Implementation
+
+The CI workflow is implemented using a *Jenkins Declarative Pipeline*, with the entire pipeline defined as code in a version-controlled Jenkinsfile. This approach enables repeatable, maintainable, and auditable CI automation while allowing pipeline changes to be tracked through Git.
+
+### Jenkinsfile Structure
+
+The pipeline is organized into the following logical sections:
+
+| Jenkinsfile Component | Purpose |
+|-----------------------|---------|
+| Global Variables | Defines reusable configuration, including Slack notification color mappings for different build outcomes. |
+| pipeline | Declares the Jenkins Declarative Pipeline. |
+| agent | Specifies the Jenkins execution node responsible for running the pipeline. |
+| tools | Configures JDK 17 and Apache Maven 3.9.14 required for the build process. |
+| environment | Stores reusable environment variables and credentials required throughout the pipeline, including Docker registry configuration and Amazon ECR authentication. |
+| stages | Defines the sequential CI workflow, from application build through Docker image publication. |
+| post | Executes post-build actions, including automated Slack notifications to report pipeline status. |
+
+### Pipeline as Code
+
+Managing the CI workflow as code provides several advantages:
+
+- Version-controlled pipeline configuration.
+- Consistent pipeline execution across builds.
+- Simplified maintenance and future enhancements.
+- Improved collaboration through Git-based change tracking.
+- Reproducible CI automation using a single Jenkinsfile.
+
+This implementation follows the Pipeline as Code approach by keeping the complete CI workflow under source control alongside the application code, improving reliability, traceability, and maintainability.
