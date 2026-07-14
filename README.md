@@ -115,3 +115,29 @@ This architecture demonstrates a modern enterprise CI workflow that automates ap
 | Identity & Access Management | AWS IAM | Secures authentication and authorization for Amazon ECR access |
 | Team Collaboration | Slack | Sends automated pipeline status notifications |
 | Operating Systems | Amazon Linux 2023 & Ubuntu Server 26.04 LTS | Operating systems used across the CI infrastructure |
+
+## AWS Infrastructure
+
+The CI environment was deployed on Amazon Web Services (AWS) using a combination of compute, networking, identity, and container registry services. The infrastructure was designed to support automated application builds, code quality analysis, artifact management, Docker image creation, and secure image publishing to Amazon Elastic Container Registry (Amazon ECR).
+
+### AWS Infrastructure Components
+
+| AWS Service | Configuration | Purpose |
+|-------------|---------------|---------|
+| AWS Region | us-east-1 (N. Virginia) | Primary deployment region for all cloud resources |
+| Virtual Private Cloud (VPC) | Default VPC | Provides network isolation and connectivity for all EC2 instances |
+| Amazon EC2 | 4 × t3.small instances | Hosts Jenkins, Maven Agent, SonarQube, and Nexus Repository Manager |
+| Amazon ECR | vprofileappimg | Private container registry for storing Docker images |
+| AWS IAM | IAM User with programmatic access | Provides secure authentication for Jenkins to push Docker images to Amazon ECR |
+| Security Groups | Dedicated security group for each server | Controls inbound and outbound network access for Jenkins, Maven Agent, SonarQube, and Nexus Repository Manager |
+
+### EC2 Infrastructure
+
+| Server | Instance Type | Operating System | Primary Role |
+|--------|---------------|------------------|--------------|
+| Jenkins Server | t3.small | Amazon Linux 2023 | CI pipeline orchestration and automation |
+| Maven Agent | t3.small | Amazon Linux 2023 | Distributed build execution |
+| SonarQube Server | t3.small | Ubuntu Server 26.04 LTS | Static code analysis and Quality Gate evaluation |
+| Nexus Repository Manager | t3.small | Amazon Linux 2023 | Artifact repository for versioned WAR packages |
+
+The infrastructure supports an automated enterprise CI workflow in which Jenkins coordinates the build process across dedicated services for testing, code quality analysis, artifact storage, container image creation, and image publication to Amazon ECR.
