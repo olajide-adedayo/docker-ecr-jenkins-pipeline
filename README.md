@@ -339,3 +339,24 @@ The following screenshots provide visual evidence of the successful implementati
 ![Jenkins Job Dashboard](screenshots/06-jenkins-job-dashboard.png)
 
 > Jenkins project dashboard summarizing build history, generated artifacts, and the operational status of the vprofile-ci pipeline.
+
+Repository Structure
+
+.
+├── screenshots/
+│   ├── 01-jenkins-docker-ecr-pipeline-success.png
+│   ├── 02-nexus-vprofile-war-artifact.png
+│   ├── 03-ecr-vprofile-docker-image.png
+│   ├── 04-slack-jenkins-success-notification.png
+│   ├── 05-aws-infrastructure-running.png
+│   └── 06-jenkins-job-dashboard.png
+├── .gitignore
+├── LICENSE
+└── README.md
+
+Repository Contents
+
+- README.md – Comprehensive project documentation covering the architecture, implementation, workflow, screenshots, troubleshooting, lessons learned, and technical skills demonstrated.
+- screenshots/ – Contains screenshots captured during the project implementation and used throughout the README as supporting technical evidence.
+- .gitignore – Specifies files and directories excluded from Git version control.
+- LICENSE – Defines the licensing terms for this repository.
