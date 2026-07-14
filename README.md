@@ -45,3 +45,50 @@ The implemented solution enables Jenkins to automatically:
 - Notify the development team of pipeline execution results through Slack.
 
 By automating these activities, the solution improves build consistency, reduces manual intervention, enhances traceability through image versioning, and prepares container images for future deployment into container orchestration platforms such as Amazon ECS or Kubernetes.
+
+## Solution Architecture
+
+The solution architecture extends an enterprise Continuous Integration (CI) pipeline by incorporating Docker containerization and Amazon Elastic Container Registry (Amazon ECR) for automated container image management.
+
+The pipeline begins when application source code is available in the GitHub repository. Jenkins orchestrates the entire workflow by compiling the application with Maven, executing automated unit tests, performing static code quality analysis with Checkstyle and SonarQube, evaluating the configured Quality Gate, publishing the generated WAR artifact to Nexus Repository Manager, building a Docker image using a multi-stage Dockerfile, authenticating with Amazon ECR, pushing the versioned Docker image to a private Amazon ECR repository, and finally sending build notifications to Slack.
+
+### Architecture Workflow
+
+text
+Developer
+      │
+      ▼
+GitHub Repository (docker branch)
+      │
+      ▼
+Jenkins Declarative Pipeline
+      │
+      ▼
+Maven Build
+      │
+      ▼
+Unit Tests
+      │
+      ▼
+Checkstyle Analysis
+      │
+      ▼
+SonarQube Static Code Analysis
+      │
+      ▼
+Quality Gate Evaluation
+      │
+      ▼
+Nexus Repository Manager
+      │
+      ▼
+Docker Multi-stage Image Build
+      │
+      ▼
+Amazon Elastic Container Registry (Amazon ECR)
+      │
+      ▼
+Slack Notification
+
+
+This architecture demonstrates a modern enterprise CI workflow that automates application validation, artifact management, container image creation, secure image publishing, and team notification, ensuring consistency, traceability, and repeatability throughout the software delivery process.
