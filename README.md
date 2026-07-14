@@ -389,3 +389,44 @@ This project provided hands-on experience in designing, implementing, and troubl
 - Automating build notifications through Slack to improve team visibility and collaboration.
 - Diagnosing and resolving CI pipeline failures by analyzing build logs, service configurations, and integration points.
 - Understanding how multiple DevOps tools work together to deliver a reliable, automated Continuous Integration workflow.
+
+Skills Demonstrated
+
+Throughout this project, the following technical and professional skills were demonstrated:
+
+DevOps & CI/CD
+
+- Jenkins Declarative Pipelines
+- Continuous Integration (CI)
+- Pipeline as Code
+- Distributed Build Architecture
+- Build Automation
+
+Programming & Build Tools
+
+- Java
+- Maven
+- Docker
+- Docker Multi-stage Builds
+
+Code Quality & Artifact Management
+
+- SonarQube
+- Nexus Repository Manager
+
+Cloud & Infrastructure
+
+- Amazon Web Services (AWS)
+- Amazon EC2
+- Amazon Elastic Container Registry (Amazon ECR)
+- IAM
+- Default VPC
+- Security Groups
+
+Collaboration & Automation
+
+- Slack Integration
+- Git
+- GitHub
+- Technical Documentation
+- Troubleshooting and Root Cause Analysis
