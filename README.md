@@ -443,3 +443,14 @@ The following enhancements could further improve this CI pipeline and align it w
 - Enhance monitoring and observability by integrating Amazon CloudWatch and centralized log management solutions.
 - Configure automated image lifecycle policies in Amazon ECR to manage older image versions efficiently.
 - Expand automated testing by incorporating additional security and performance testing into the CI pipeline.
+
+
+Author
+
+Olajide Adedayo
+
+Aspiring AWS Cloud & DevOps Engineer with hands-on experience designing and implementing CI pipelines using Jenkins, Docker, SonarQube, Nexus Repository Manager, Amazon Elastic Container Registry (Amazon ECR), and AWS.
+
+- GitHub: https://github.com/olajide-adedayo
+- LinkedIn: https://www.linkedin.com/in/olajide-adedayo-9126593b3/
+- Medium: https://medium.com/@olajideadedayo230
