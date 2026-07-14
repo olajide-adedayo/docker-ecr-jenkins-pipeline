@@ -176,3 +176,33 @@ vprofileappimg
 The image publishing process is performed within the Jenkins pipeline using Docker registry authentication, ensuring that only authenticated pipeline executions can publish container images to the private registry.
 
 This automated integration eliminates manual image publishing, maintains consistent image versioning, and prepares container images for future deployment workflows.
+
+## Jenkins Pipeline Workflow
+
+The project uses a *Jenkins Declarative Pipeline* to automate the complete Continuous Integration (CI) workflow. The pipeline executes each stage sequentially, ensuring that application quality is validated before artifacts and container images are published.
+
+### Pipeline Execution Flow
+
+| Stage | Description |
+|--------|-------------|
+| *BUILD* | Compiles the Java application and resolves project dependencies using Apache Maven. |
+| *UNIT TEST* | Executes automated unit tests to validate application functionality. |
+| *INTEGRATION TEST* | Runs integration tests to verify interactions between application components. |
+| *CODE ANALYSIS WITH CHECKSTYLE* | Performs static code style analysis to ensure compliance with coding standards. |
+| *CODE ANALYSIS WITH SONARQUBE* | Executes SonarQube static code analysis and submits the results for Quality Gate evaluation. |
+| *Publish to Nexus Repository Manager* | Publishes the generated WAR artifact to Nexus Repository Manager for centralized artifact storage and version management. |
+| *Build App Image* | Builds a Docker image using the project's multi-stage Dockerfile. |
+| *Upload App Image* | Authenticates with Amazon Elastic Container Registry (Amazon ECR) and pushes the Docker image using both the Jenkins build number and the latest tag. |
+
+### Pipeline Characteristics
+
+The pipeline implements a structured CI workflow that:
+
+- Automates application build, testing, and validation.
+- Performs multiple code quality verification stages before artifact publication.
+- Stores versioned build artifacts in Nexus Repository Manager.
+- Builds production-ready Docker images using a multi-stage Dockerfile.
+- Publishes versioned container images to a private Amazon ECR repository.
+- Sends Slack notifications to communicate pipeline execution status.
+
+This sequential workflow helps ensure that only successfully validated application builds are packaged into Docker images and published to Amazon ECR.
