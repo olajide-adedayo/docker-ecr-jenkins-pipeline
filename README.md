@@ -299,3 +299,43 @@ The implementation achieved the following objectives:
 During implementation, several real-world integration issues—including SonarQube webhook configuration, changing EC2 public IP addresses, AWS credential validation, and Amazon ECR authentication—were successfully diagnosed and resolved, resulting in a fully operational end-to-end CI pipeline.
 
 The completed solution demonstrates modern DevOps practices by combining automated application validation, artifact management, containerization, secure image publishing, and team notifications into a single, repeatable Continuous Integration workflow.
+
+Project Screenshots
+
+The following screenshots provide visual evidence of the successful implementation and execution of the CI pipeline, Docker containerization workflow, Amazon ECR image publishing process, and supporting AWS infrastructure.
+
+Figure 1 – Jenkins Pipeline Overview
+
+"Jenkins Pipeline Overview" (screenshots/01-jenkins-docker-ecr-pipeline-success.png)
+
+Successful execution of the complete Jenkins Declarative Pipeline, showing all stages completed successfully from source code checkout through Docker image publication and post-build actions.
+
+Figure 2 – Nexus Repository Manager
+
+"Nexus Repository Manager" (screenshots/02-nexus-vprofile-war-artifact.png)
+
+Published Maven application artifact ("vprofile-38.war") in Nexus Repository Manager, demonstrating successful artifact versioning and repository management.
+
+Figure 3 – Amazon Elastic Container Registry (ECR)
+
+"Amazon ECR Docker Image" (screenshots/03-ecr-vprofile-docker-image.png)
+
+Docker image successfully published to Amazon Elastic Container Registry (ECR) with both the build-specific ("38") and "latest" image tags.
+
+Figure 4 – Slack Build Notification
+
+"Slack Build Notification" (screenshots/04-slack-jenkins-success-notification.png)
+
+Automated Slack notification confirming the successful completion of the Jenkins CI pipeline for build #38.
+
+Figure 5 – AWS Infrastructure
+
+"AWS EC2 Infrastructure" (screenshots/05-aws-infrastructure-running.png)
+
+Amazon EC2 instances hosting the Jenkins server, Maven build agent, SonarQube server, and Nexus Repository Manager used throughout the CI pipeline implementation.
+
+Figure 6 – Jenkins Job Dashboard
+
+"Jenkins Job Dashboard" (screenshots/06-jenkins-job-dashboard.png)
+
+Jenkins project dashboard summarizing build history, generated artifacts, and the operational status of the "vprofile-ci" pipeline.
