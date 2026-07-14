@@ -236,3 +236,45 @@ Managing the CI workflow as code provides several advantages:
 - Reproducible CI automation using a single Jenkinsfile.
 
 This implementation follows the Pipeline as Code approach by keeping the complete CI workflow under source control alongside the application code, improving reliability, traceability, and maintainability.
+
+## Docker Image Build & Amazon ECR Push Process
+
+Following successful application validation and artifact publication, the Jenkins pipeline automatically containerizes the application and publishes the resulting Docker image to Amazon Elastic Container Registry (Amazon ECR).
+
+### Image Build Process
+
+The Docker image is built using a *multi-stage Dockerfile* with the following build context:
+
+text
+./Docker-files/app/multistage/
+
+
+This stage packages the Java web application into a production-ready Docker image while leveraging Docker's multi-stage build capabilities to streamline the image creation process.
+
+### Image Versioning Strategy
+
+To improve image traceability and version management, each successful pipeline execution applies two Docker image tags:
+
+| Image Tag | Purpose |
+|-----------|---------|
+| ${env.BUILD_NUMBER} | Creates a unique version of the image for each Jenkins build. |
+| latest | Identifies the most recent successful build. |
+
+This tagging strategy enables both version-specific deployments and convenient access to the latest container image.
+
+### Amazon ECR Push Workflow
+
+After the Docker image is successfully built, Jenkins authenticates with Amazon Elastic Container Registry (Amazon ECR) using AWS credentials securely configured in Jenkins.
+
+The pipeline then:
+
+1. Authenticates with the private Amazon ECR registry.
+2. Pushes the Docker image tagged with the Jenkins build number.
+3. Pushes the same image with the latest tag.
+4. Stores both image versions in the private Amazon ECR repository *vprofileappimg*.
+
+The successful completion of this process provides a centrally managed, versioned container image repository that can be consumed by future deployment platforms such as Amazon ECS or Kubernetes.
+
+### Outcome
+
+The implementation automates the complete container image publishing workflow, eliminating manual Docker image creation and registry uploads while ensuring that validated application builds are consistently versioned and securely stored in Amazon ECR.
