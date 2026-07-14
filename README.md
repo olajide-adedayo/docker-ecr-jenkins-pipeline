@@ -304,38 +304,38 @@ Project Screenshots
 
 The following screenshots provide visual evidence of the successful implementation and execution of the CI pipeline, Docker containerization workflow, Amazon ECR image publishing process, and supporting AWS infrastructure.
 
-Figure 1 – Jenkins Pipeline Overview
+### Figure 1 – Jenkins Pipeline Overview
 
-"Jenkins Pipeline Overview" (screenshots/01-jenkins-docker-ecr-pipeline-success.png)
+![Jenkins Pipeline Overview](screenshots/01-jenkins-docker-ecr-pipeline-success.png)
 
-Successful execution of the complete Jenkins Declarative Pipeline, showing all stages completed successfully from source code checkout through Docker image publication and post-build actions.
+> Successful execution of the complete Jenkins Declarative Pipeline, showing all pipeline stages completed successfully from source code checkout through Docker image publication and post-build actions.
+>
+> ### Figure 2 – Nexus Repository Manager
 
-Figure 2 – Nexus Repository Manager
+![Nexus Repository Manager](screenshots/02-nexus-vprofile-war-artifact.png)
 
-"Nexus Repository Manager" (screenshots/02-nexus-vprofile-war-artifact.png)
+> Published Maven application artifact (vprofile-38.war) in Nexus Repository Manager, demonstrating successful artifact versioning and repository management.
+>
+> ### Figure 3 – Amazon Elastic Container Registry (ECR)
 
-Published Maven application artifact ("vprofile-38.war") in Nexus Repository Manager, demonstrating successful artifact versioning and repository management.
+![Amazon ECR Docker Image](screenshots/03-ecr-vprofile-docker-image.png)
 
-Figure 3 – Amazon Elastic Container Registry (ECR)
+> Docker image successfully published to Amazon Elastic Container Registry (Amazon ECR) with both the build-specific (38) and latest image tags.
 
-"Amazon ECR Docker Image" (screenshots/03-ecr-vprofile-docker-image.png)
+### Figure 4 – Slack Build Notification
 
-Docker image successfully published to Amazon Elastic Container Registry (ECR) with both the build-specific ("38") and "latest" image tags.
+![Slack Build Notification](screenshots/04-slack-jenkins-success-notification.png)
 
-Figure 4 – Slack Build Notification
+> Automated Slack notification confirming the successful completion of the Jenkins CI pipeline for build #38.
 
-"Slack Build Notification" (screenshots/04-slack-jenkins-success-notification.png)
+### Figure 5 – AWS Infrastructure
 
-Automated Slack notification confirming the successful completion of the Jenkins CI pipeline for build #38.
+![AWS EC2 Infrastructure](screenshots/05-aws-infrastructure-running.png)
 
-Figure 5 – AWS Infrastructure
+> Amazon EC2 instances hosting the Jenkins server, Maven build agent, SonarQube server, and Nexus Repository Manager used throughout the CI pipeline implementation.
 
-"AWS EC2 Infrastructure" (screenshots/05-aws-infrastructure-running.png)
+### Figure 6 – Jenkins Job Dashboard
 
-Amazon EC2 instances hosting the Jenkins server, Maven build agent, SonarQube server, and Nexus Repository Manager used throughout the CI pipeline implementation.
+![Jenkins Job Dashboard](screenshots/06-jenkins-job-dashboard.png)
 
-Figure 6 – Jenkins Job Dashboard
-
-"Jenkins Job Dashboard" (screenshots/06-jenkins-job-dashboard.png)
-
-Jenkins project dashboard summarizing build history, generated artifacts, and the operational status of the "vprofile-ci" pipeline.
+> Jenkins project dashboard summarizing build history, generated artifacts, and the operational status of the vprofile-ci pipeline.
