@@ -430,3 +430,16 @@ Collaboration & Automation
 - GitHub
 - Technical Documentation
 - Troubleshooting and Root Cause Analysis
+
+Future Enhancements
+
+The following enhancements could further improve this CI pipeline and align it with production-ready DevOps practices:
+
+- Extend the pipeline to support Continuous Deployment (CD) to staging and production environments.
+- Integrate automated vulnerability scanning for Docker images before publishing them to Amazon Elastic Container Registry (Amazon ECR).
+- Implement Infrastructure as Code (IaC) using Terraform or AWS CloudFormation to provision AWS resources automatically.
+- Introduce branch-based pipeline execution for feature, development, and production workflows.
+- Integrate automated approval gates before deployment to production environments.
+- Enhance monitoring and observability by integrating Amazon CloudWatch and centralized log management solutions.
+- Configure automated image lifecycle policies in Amazon ECR to manage older image versions efficiently.
+- Expand automated testing by incorporating additional security and performance testing into the CI pipeline.
